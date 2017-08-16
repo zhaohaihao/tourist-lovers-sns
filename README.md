@@ -4,3 +4,9 @@
 
 > 环境要求: JDK1.8
 
+#### 加入我们一起交流学习吧!
+
+<div class="text-center">
+	Github交流群：
+	<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=fc6d021a1e1d1155847180863178d3b8111783f33abf6cfda0efe998e209a454"><img border="0" src="https://github.com/zhaohaihao/Java-Design-Patterns/blob/master/group.png" alt="Github交流群" title="Github交流群"></a>
+</div>
