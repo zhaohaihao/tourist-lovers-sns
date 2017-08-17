@@ -15,6 +15,11 @@
 			<artifactId>tourist-lovers-sns-service</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<!-- 非tomcat 热部署 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency> 
 	</dependencies>
 
 	<build>
@@ -23,6 +28,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin </artifactId>
+				<configuration>
+					<fork>true</fork>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

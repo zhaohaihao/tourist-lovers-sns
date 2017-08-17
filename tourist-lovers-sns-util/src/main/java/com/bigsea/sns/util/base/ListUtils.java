@@ -24,8 +24,8 @@ public class ListUtils {
 	 * @param str 所需转换字符串
 	 * @return
 	 */
-	public static List<String> string2List(String str) {
-		return string2List(str, ",");
+	public static List<String> str2List(String str) {
+		return str2List(str, ",");
 	}
 	
 	/**
@@ -34,34 +34,35 @@ public class ListUtils {
 	 * @param regex 分割符号
 	 * @return
 	 */
-	public static List<String> string2List(String str, String regex) {
+	public static List<String> str2List(String str, String regex) {
+		return str2List(str, regex, 0, str.length());
+	}
+	
+	/**
+	 * 字符串切割转换成列表, 默认逗号分割
+	 * @param str 所需转换字符串
+	 * @param beginIndex 切割起始位置
+	 * @param endIndex 切割结束位置
+	 * @return
+	 */
+	public static List<String> str2List(String str, int beginIndex, int endIndex) {
+		return str2List(str, ",", beginIndex, endIndex);
+	}
+	
+	/**
+	 * 字符串切割转换成列表
+	 * @param str 所需转换字符串
+	 * @param regex 分割符号
+	 * @param beginIndex 切割起始位置
+	 * @param endIndex 切割结束位置
+	 * @return
+	 */
+	public static List<String> str2List(String str , String regex, int beginIndex, int endIndex) {
 		if (str != null && regex != null) {
+			str = str.substring(beginIndex, endIndex);
 			String[] strArr = str.split(regex);
 			List<String> arrList = Arrays.asList(strArr);
 			return arrList;
-		}
-		return null;
-	}
-	
-	/**
-	 * 列表字符串切割转换成列表, 默认逗号分割
-	 * @param str 
-	 * @return
-	 */
-	public static List<String> listString2List(String str) {
-		return listString2List(str, ",");
-	}
-	
-	/**
-	 * 列表字符串切割转换成列表
-	 * @param str 所需转换字符串
-	 * @param regex 分割符号
-	 * @return
-	 */
-	public static List<String> listString2List(String str, String regex) {
-		if (str != null && regex != null) {
-			str = str.substring(1, str.length() - 1);
-			return string2List(str, regex);
 		}
 		return null;
 	}
