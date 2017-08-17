@@ -1,8 +1,8 @@
-package com.bigsea.sns.dao.impl;
+package com.bigsea.sns.dao.impl.demo;
 
 import org.springframework.stereotype.Repository;
 
-import com.bigsea.sns.dao.DemoDao;
+import com.bigsea.sns.dao.demo.DemoDao;
 import com.bigsea.sns.model.Demo;
 /**
  * Demo DaoImpl
@@ -10,12 +10,13 @@ import com.bigsea.sns.model.Demo;
  */
 @Repository
 public class DemoDaoImpl implements DemoDao {
-
+	
 	@Override
 	public Demo getDemo() {
 		Demo demo = new Demo();
 		demo.setId(1);
-		demo.setMsg("Hello World!");
+		demo.setUsername("赵海豪");
+		demo.setAge(23);
 		return demo;
 	}
 

@@ -1,12 +1,13 @@
-package com.bigsea.sns.dao;
+package com.bigsea.sns.service.demo;
 
 import com.bigsea.sns.model.Demo;
 
 /**
- * Demo Dao
+ * Demo Service
  * Created by zhh on 2017/08/16.
  */
-public interface DemoDao {
+public interface DemoService{
 	
 	Demo getDemo();
+	
 }
