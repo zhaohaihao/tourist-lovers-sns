@@ -2,9 +2,11 @@ package com.bigsea.sns.web;
 
 import java.util.List;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -18,6 +20,9 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
  */
 // 申明SpringBoot为程序进行必要配置, 等价使用 @Configuration, @EnableAutoConfiguration 和 @ComponentScan
 @SpringBootApplication(scanBasePackages = {"com.bigsea.sns"})
+@EntityScan(basePackages = {"com.bigsea.sns.model"})
+@MapperScan("com.bigsea.sns.dao.demo.mapper")
+@EnableJpaRepositories({"com.bigsea.sns.dao"}) // 用于 Jpa的代码配置
 public class TouristLoversWebApplication extends WebMvcConfigurerAdapter{
 	
 	public static void main(String[] args) {

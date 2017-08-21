@@ -81,5 +81,3 @@ buildNumber.properties
 .settings
 .metadata
 
-# config file
-application.properties

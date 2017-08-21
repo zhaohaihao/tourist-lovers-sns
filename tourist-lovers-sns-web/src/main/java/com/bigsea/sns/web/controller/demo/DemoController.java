@@ -19,10 +19,15 @@ public class DemoController {
 	@Autowired
 	DemoService demoService;
 	
-	@RequestMapping("getDemo")
+	@RequestMapping("getDemoByRepo")
 	@ResponseBody
-	public Demo getDemo() {
-		return demoService.getDemo();
+	public Demo getDemoByRepo() {
+		return demoService.getDemoByRepo();
 	}
 	
+	@RequestMapping("getDemoByMapper")
+	@ResponseBody
+	public Demo getDemoByMapper() {
+		return demoService.getDemoByMapper();
+	}
 }
