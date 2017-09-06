@@ -21,7 +21,7 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 // 申明SpringBoot为程序进行必要配置, 等价使用 @Configuration, @EnableAutoConfiguration 和 @ComponentScan
 @SpringBootApplication(scanBasePackages = {"com.bigsea.sns"})
 @EntityScan(basePackages = {"com.bigsea.sns.model"})
-@MapperScan("com.bigsea.sns.dao.demo.mapper")
+@MapperScan("com.bigsea.sns.dao")
 @EnableJpaRepositories({"com.bigsea.sns.dao"}) // 用于 Jpa的代码配置
 public class TouristLoversWebApplication extends WebMvcConfigurerAdapter{
 	
