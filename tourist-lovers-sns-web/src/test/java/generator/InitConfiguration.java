@@ -35,7 +35,7 @@ public class InitConfiguration extends CodeGeneratorBaseTool {
 	 * Mybatis 代码自动生成基本配置
 	 * @return
 	 */
-	public static Context initMybatisGeneratorContext() {
+	public static Context initMybatisGeneratorContext(String sign) {
 		Context context = new Context(ModelType.FLAT);
 		context.setId("Potato");
 		context.setTargetRuntime("MyBatis3Simple");
@@ -56,7 +56,7 @@ public class InitConfiguration extends CodeGeneratorBaseTool {
 
         SqlMapGeneratorConfiguration sqlMapGeneratorConfiguration = new SqlMapGeneratorConfiguration();
         sqlMapGeneratorConfiguration.setTargetProject(PROJECT_PATH + RESOURCES_PATH);
-        sqlMapGeneratorConfiguration.setTargetPackage("mapper");
+        sqlMapGeneratorConfiguration.setTargetPackage("mapper." + sign);
         context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
         
 		return context;

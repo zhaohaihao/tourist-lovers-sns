@@ -32,7 +32,7 @@ public class ModelAndMapperGenerator extends CodeGeneratorBaseTool {
 	public static void genModelAndMapper(String tableName, String modelName, String sign) {
 		Context context = null;
 		try {
-			context = InitConfiguration.initMybatisGeneratorContext();
+			context = InitConfiguration.initMybatisGeneratorContext(sign);
 			// TODO 路径转换
 			JavaModelGeneratorConfiguration javaModelGeneratorConfiguration = new JavaModelGeneratorConfiguration();
 	        javaModelGeneratorConfiguration.setTargetProject(PROJECT_PATH + JAVA_PATH);
