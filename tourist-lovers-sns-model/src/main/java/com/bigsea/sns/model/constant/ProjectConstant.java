@@ -11,6 +11,7 @@ public interface ProjectConstant {
 	String MODEL_PACKAGE = BASE_PACKAGE + ".model"; // 项目Model所在包
 	String MAPPER_PACKAGE = BASE_PACKAGE + ".dao.mapper"; // 项目Mapper所在包
 	String SERVICE_PACKAGE = BASE_PACKAGE + ".service"; // 项目Service所在包
+	String SERVICE_IMPL_PACKAGE = BASE_PACKAGE + ".service.impl"; // 项目Service实现类所在包
 	String CONTROLLER_PACKAGE = BASE_PACKAGE + ".web.controller"; // 项目Controller所在包
 	
 	String MAPPER_INTERFACE_REFERENCE = BASE_PACKAGE + ".dao.MyMapper"; // MyMapper插件基础接口的完全限定名

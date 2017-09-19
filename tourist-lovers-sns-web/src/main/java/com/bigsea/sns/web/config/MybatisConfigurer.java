@@ -1,5 +1,7 @@
 package com.bigsea.sns.web.config;
 
+import static com.bigsea.sns.model.constant.ProjectConstant.*;
+
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -13,9 +15,6 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 
 import com.github.pagehelper.PageHelper;
-
-import static com.bigsea.sns.model.constant.ProjectConstant.*;
-import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 
 /**
  * Mybatis & Mapper & PageHelper 配置

@@ -1,7 +1,6 @@
 package com.bigsea.sns.web.config;
 
-import static com.bigsea.sns.model.constant.ProjectConstant.MAPPER_INTERFACE_REFERENCE;
-import static com.bigsea.sns.model.constant.ProjectConstant.MAPPER_PACKAGE;
+import static com.bigsea.sns.model.constant.ProjectConstant.*;
 
 import java.util.Properties;
 
