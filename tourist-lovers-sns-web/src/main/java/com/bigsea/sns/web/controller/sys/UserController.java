@@ -21,7 +21,12 @@ public class UserController extends BaseController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping("findUserById/{id}")
+	@RequestMapping("index")
+	public String index() {
+		return "index";
+	}
+	
+	@RequestMapping("findUserById")
 	@ResponseBody
 	public Result findUserById(@PathVariable Integer id) {
 		try {

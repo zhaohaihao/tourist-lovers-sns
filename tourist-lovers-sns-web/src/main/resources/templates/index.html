@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Test Thymeleaf</title>
+	</head>
+	
+	<body>
+		<h1 th:inline = "text">Test</h1>
+		<p th:text = "${data}">data</p>
+	</body>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			alert("1");
+			$.ajax({
+				type: "post",
+				url: "/user/findUserById",
+				dataType: "json",
+				success: function(data) {
+					alert("成功");
+					alert(data);
+				},
+				error: function(data) {
+					alert("失败");
+					alert(data);
+				}
+			});
+		});
+	</script>
+</html>
