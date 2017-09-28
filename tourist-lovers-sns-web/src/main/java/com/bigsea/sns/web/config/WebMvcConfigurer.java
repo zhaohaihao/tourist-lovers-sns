@@ -68,11 +68,11 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 					result.setCode(ResultCode.FAIL).setMsg(e.getMessage());
 					logger.info(e.getMessage());
 				} else if (e instanceof NoHandlerFoundException) {
-					result.setCode(ResultCode.NOT_FOUND).setMsg(ProjectConstant.NOT_FOUND_RESULT);
+					result.setCode(ResultCode.NOT_FOUND).setMsg(String.format(ProjectConstant.NOT_FOUND_RESULT, request.getRequestURI()));
 				} else if (e instanceof ServletException) {
 					result.setCode(ResultCode.FAIL).setMsg(e.getMessage());
 				} else {
-					result.setCode(ResultCode.INTERNAL_SERVER_ERROR).setMsg(ProjectConstant.INTERNAL_SERVER_ERROR_SIMPLE_RESULT);
+					result.setCode(ResultCode.INTERNAL_SERVER_ERROR).setMsg(String.format(ProjectConstant.INTERNAL_SERVER_ERROR_SIMPLE_RESULT, request.getRequestURI()));
 					String msg;
 					if (handler instanceof HandlerMethod) {
 						HandlerMethod handlerMethod = (HandlerMethod) handler;
