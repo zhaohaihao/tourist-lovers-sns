@@ -1,8 +1,8 @@
-package ${basePackage}.web.controller.${sign};
-import ${basePackage}.model.result.Result;
-import ${basePackage}.model.${sign}.${modelNameUpperCamel};
-import ${basePackage}.service.${sign}.${modelNameUpperCamel}Service;
-import ${basePackage}.web.controller.BaseController;
+package com.bigsea.sns.web.controller.sys;
+import com.bigsea.sns.model.result.Result;
+import com.bigsea.sns.model.sys.User;
+import com.bigsea.sns.service.sys.UserService;
+import com.bigsea.sns.web.controller.BaseController;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,48 +15,53 @@ import java.util.List;
 
 /**
  *
- * Created by ${author} on ${date}.
+ * Created by zhh on 2017/09/28.
  */
 @Controller
-@RequestMapping("/${baseRequestMapping}/")
-public class ${modelNameUpperCamel}Controller extends BaseController {
+@RequestMapping("/user/")
+public class UserController extends BaseController {
 
     @Autowired
-    ${modelNameUpperCamel}Service ${modelNameLowerCamel}Service;
-
+    UserService userService;
+    
+    @RequestMapping("index")
+    public String index() {
+        return "index";
+    }
+    
     @RequestMapping("add")
     @ResponseBody
-    public Result add(${modelNameUpperCamel} ${modelNameLowerCamel}) {
-        ${modelNameLowerCamel}Service.save(${modelNameLowerCamel});
+    public Result add(User user) {
+        userService.save(user);
         return handleSuc();
     }
 
     @RequestMapping("delete")
     @ResponseBody
     public Result delete(@RequestParam Integer id) {
-	    ${modelNameLowerCamel}Service.deleteById(id);
+	    userService.deleteById(id);
     	return handleSuc();
     }
 
     @RequestMapping("update")
     @ResponseBody
-    public Result update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
-	    ${modelNameLowerCamel}Service.update(${modelNameLowerCamel});
+    public Result update(User user) {
+	    userService.update(user);
     	return handleSuc();
     }
 
     @RequestMapping("detail")
     @ResponseBody
     public Result detail(@RequestParam Integer id) {
-        ${modelNameUpperCamel} ${modelNameLowerCamel} = ${modelNameLowerCamel}Service.findById(id);
-        return handleSuc(${modelNameLowerCamel});
+        User user = userService.findById(id);
+        return handleSuc(user);
     }
 
     @RequestMapping("list")
     @ResponseBody
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
-        List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.findAll();
+        List<User> list = userService.findAll();
         PageInfo pageInfo = new PageInfo(list);
         return handleSuc(pageInfo);
     }
