@@ -4,32 +4,32 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	<head>
 		<meta charset="UTF-8" />
-		<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 		<title>Test Thymeleaf</title>
 	</head>
 	
 	<body>
 		<h1 th:inline = "text">Test</h1>
 		<p>data</p>
+		
+		
+		<script th:src="@{../static/js/jquery.js}"></script>
+		<script th:src="@{../static/js/jquery.min.js}"></script>
+		<script type="text/javascript">
+			$.ajax({
+				url: "/user/list",
+				dataType: "json",
+				data: {page: "1", size: "1"},
+				success: function(res) {
+					alert("成功");
+					console.log(res.data.list);
+					$("p").text(res.data.list[0].userName);
+					alert(res);
+				},
+				error: function(res) {
+					alert("失败");
+					alert(res);
+				}
+			});
+		</script>
 	</body>
-	
-	<script type="text/javascript">
-		$.ajax({
-			url: "/user/list",
-			dataType: "json",
-			data: {page: "1", size: "1"},
-			success: function(res) {
-				alert("成功");
-				console.log(res);
-				$("p").text(res.data);
-				alert(res);
-			},
-			error: function(res) {
-				alert("失败");
-				alert(res);
-			}
-		});
-		
-		
-	</script>
 </html>
