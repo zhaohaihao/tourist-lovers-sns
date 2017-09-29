@@ -29,6 +29,11 @@ public class UserController extends BaseController {
         return "index";
     }
     
+    @RequestMapping("error")
+    public String error() {
+        return "404";
+    }
+    
     @RequestMapping("add")
     @ResponseBody
     public Result add(User user) {

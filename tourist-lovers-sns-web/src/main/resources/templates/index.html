@@ -1,33 +1,53 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
+<html lang="zh-CN"
+	  xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Test Thymeleaf</title>
+		<title>主页</title>
+		
+		<link rel="stylesheet" th:href="@{/static/css/bootstrap.min.css}" />
+		<link rel="stylesheet" th:href="@{/static/css/animate.css}" />
+		<link rel="stylesheet" th:href="@{/static/css/icomoon.css}" />
+		<link rel="stylesheet" th:href="@{/static/css/owl.carousel.min.css}" />
+		<link rel="stylesheet" th:href="@{/static/css/owl.theme.default.min.css}" />
+		<link rel="stylesheet" th:href="@{/static/css/style.css}" />
 	</head>
 	
 	<body>
-		<h1 th:inline = "text">Test</h1>
-		<p>data</p>
-		
-		
-		<script th:src="@{/static/js/jquery.js}"></script>
+		<!-- header start -->
+		<header>
+			<div class="container text-center">
+				<div class="fh5co-navbar-brand">
+					Logo
+				</div>
+				<nav id="fh5co-navbar-nav">
+					<ul>
+						<li><a href="javascript:void(0);" class="active">主页</a></li>
+						<li><a href="javascript:void(0);">资讯</a></li>
+						<li><a href="javascript:void(0);">圈子</a></li>
+						<li><a href="javascript:void(0);">关于</a></li>
+						<li><a href="javascript:void(0);">个人</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- header end -->
+		<p></p>
 		<script th:src="@{/static/js/jquery.min.js}"></script>
+		<script th:src="@{/static/js/bootstrap.min.js}"></script>
 		<script type="text/javascript">
 			$.ajax({
 				url: "/user/list",
 				dataType: "json",
 				data: {page: "1", size: "1"},
 				success: function(res) {
-					alert("成功");
 					console.log(res.data.list);
 					$("p").text(res.data.list[0].userName);
-					alert(res);
 				},
 				error: function(res) {
 					alert("失败");
-					alert(res);
 				}
 			});
 		</script>
