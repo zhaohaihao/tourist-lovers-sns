@@ -7,6 +7,8 @@
 - JDK1.8
 
 ## 技术选型
+- JQuery（[查看JQuery API中文文档](http://www.jquery123.com/)）
+- Bootstrap（[查看官方中文文档](http://v3.bootcss.com/)）
 - Spring Boot（[查看Spring Boot学习&使用指南](http://www.jianshu.com/p/1a9fd8936bd8)）
 - MyBatis（[查看官方中文文档](http://www.mybatis.org/mybatis-3/zh/index.html)）
 - MyBatis通用Mapper插件（[查看官方中文文档](https://mapperhelper.github.io/docs/)）
