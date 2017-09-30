@@ -31,7 +31,7 @@ public class UserController extends BaseController {
     
     @RequestMapping("error")
     public String error() {
-        return "404";
+        return "error/404";
     }
     
     @RequestMapping("add")
